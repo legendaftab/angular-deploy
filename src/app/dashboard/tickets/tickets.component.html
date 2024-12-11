@@ -1,0 +1,21 @@
+ <div>
+  <ul>
+    @for(ticket of tickets;track ticket.id){
+    <li>
+      <app-ticket [data]="ticket" (close)="onCloseTicket(ticket.id)"/>
+    </li>
+    }@empty {
+      <p>NO tICKETS AVAILABLE </p>
+    }
+  </ul>
+</div> 
+
+<!-- <article>
+  <header>
+      <img src="list.png" alt="A list of items" />
+      <h2>Support Tickets</h2>
+    </header> -->
+<div id="new-ticket">
+  <app-new-ticket (add)="onAdd($event)" />
+</div>
+

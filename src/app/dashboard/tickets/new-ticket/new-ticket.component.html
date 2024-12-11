@@ -1,0 +1,30 @@
+<!-- <form (ngSubmit)="onSumit(titleInput.value,textInput.value)" #form>
+  <app-control label="Title">
+    <input name="title" id="title" #titleInput />
+  </app-control>
+  <app-control label="Request" #ctrl>
+    <textarea name="request" id="request" rows="3" #textInput></textarea>
+  </app-control>
+  <p>
+    <button appButton>
+      submit
+      <span ngProjectAs="icon"> ⌲</span>
+    </button>
+  </p>
+</form> -->
+
+<!-- for two way bindng approach -->
+<form (ngSubmit)="onSumit()" #form>
+  <app-control label="Title">
+    <input name="title" id="title" #titleInput [(ngModel)]="enteredTitle" />
+  </app-control>
+  <app-control label="Request" #ctrl>
+    <textarea name="request" id="request" rows="3" #textInput [(ngModel)]="enteredText"></textarea>
+  </app-control>
+  <p>
+    <button appButton>
+      submit
+      <span ngProjectAs="icon"> ⌲</span>
+    </button>
+  </p>
+</form>
